@@ -1,0 +1,20 @@
+<div class="blog-nav">
+    <a href="/"><h1>v-blog</h1></a>
+    <p>my first blog</p>
+</div>
+<div class="btn-group">
+    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <% if(user){ %>
+        <li><a href="/?id=<%- user.id %>">个人中心</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/publishPage">发表文章</a></li>
+        <li><a href="/logout">退出登录</a></li>
+        <% } else { %>
+        <li><a href="/loginPage">登录</a></li>
+        <li><a href="/registerPage">注册</a></li>
+        <% } %>
+    </ul>
+</div>

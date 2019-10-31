@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+<%- include('head.ejs') %>
+<div class="container">
+    <form class="login-form" id="registerForm" name="registerForm" action="/register" method="post"
+          enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="username">用户名<span>*</span></label>
+            <input type="text" class="form-control input-lg" id="username" name="username"
+                   placeholder="用户名为4到16位的字母、数字、下划线和减号）" required pattern="^[a-zA-Z0-9_-]{4,16}$">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码<span>*</span></label>
+            <input type="password" class="form-control input-lg" id="exampleInputPassword1" name="password1"
+                   placeholder="密码为6-18为的字母或数字" required pattern="[a-zA-Z0-9]{6,18}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword2">重复密码<span>*</span></label>
+            <input type="password" class="form-control input-lg" id="exampleInputPassword2" name="password2"
+                   placeholder="重复密码" required>
+        </div>
+        <div class="form-group">
+            <label for="sex">性别<span>*</span></label>
+            <!--            <input type="password" class="form-control input-lg" id="sex">-->
+            <select class="form-control input-lg" id="sex" name="sex">
+                <option >男</option>
+                <option >女</option>
+                <option >保密</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">头像<span>*</span></label>
+            <input type="file" id="exampleInputFile" name="header" required>
+            <!--            <p class="help-block">Example block-level help text here.</p>-->
+        </div>
+        <div class="form-group">
+            <label for="self">个人简介<span>*</span></label>
+            <textarea class="form-control" rows="5" name="self" id="self" required></textarea>
+        </div>
+        <button id="registerSub" type="submit" class="btn btn-success btn-lg">注册</button>
+    </form>
+</div>
+
+<script src="js/jquery_3.4.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+    let registerSub = document.getElementById('registerSub');
+    registerSub.onclick = function () {
+        let username = document.getElementById('username');
+        $.ajax({
+            url:'/usernameJudge',
+            method:'GET',
+            data:{
+                username:$('#username').val()
+            },
+            success:function (res) {
+                if(res){
+                    // $('#usernameTip').html('用户已存在');
+                    username.setCustomValidity('用户已存在');
+                } else if(password1.validity.valueMissing == true){
+                    username.setCustomValidity('账号不能为空');
+                } else if(username.validity.patternMismatch == true){
+                    username.setCustomValidity('账号为4到16位（字母，数字，下划线，减号）');
+                } else{
+                    username.setCustomValidity('');
+                }
+            }
+        })
+
+        let password1 = document.getElementById('exampleInputPassword1');
+        if (password1.validity.valueMissing == true) {
+            password1.setCustomValidity('密码不能为空');
+        } else if (password1.validity.patternMismatch == true) {
+            password1.setCustomValidity('密码为6-18位的字母或数字');
+        } else {
+            password1.setCustomValidity('');
+        }
+
+        let password2 = document.getElementById('exampleInputPassword2');
+        if (password1.value != password2.value) {
+            password2.setCustomValidity('两次密码不一致');
+        } else {
+            password2.setCustomValidity('');
+        }
+
+        let file = document.getElementById('exampleInputFile');
+        if (file.validity.valueMissing == true) {
+            file.setCustomValidity('上传的头像图片不能为空');
+        } else {
+            file.setCustomValidity('');
+        }
+
+        let self = document.getElementById('self');
+        if (self.validity.valueMissing == true) {
+            self.setCustomValidity('个人简介不能为空');
+        } else {
+            self.setCustomValidity('');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ul,li{
+    list-style: none;
+}
+body{
+    position: relative;
+    background: #fff;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+.blog-nav{
+    margin: 40px auto 20px auto;
+    width: 50%;
+    text-align: center;
+}
+.blog-nav a{
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+}
+.blog-nav a h1{
+    color: #4fc08d;
+    margin: 10px 0;
+    font-weight: 700;
+}
+.blog-nav p{
+    color: #999;
+}
+
+.btn-group{
+    position: absolute;
+    right: 150px;
+    top: 5px;
+    z-index: 99;
+}
+.dropdown-menu li{
+    margin: 5px 0px;
+}
+.container{
+    width: 800px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+
+}
+.post-list ul li{
+    margin-bottom: 30px;
+}
+.media-object{
+    border-radius: 3px;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+.media-body{
+    position: relative;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(34,36,38,.15);
+}
+
+.media-heading a{
+    color: #4fc08d;
+    font-weight: 700;
+}
+.media-heading{
+    margin: 15px 0px;
+}
+pre{
+    margin-top: 10px;
+    padding: 0;
+    border: 0;
+    background-color: white;
+}
+.post-bottom .tag{
+    font-size: 13px;
+    margin-right: 5px;
+    color: #999;
+}
+.post-bottom .right{
+    float: right;
+    margin-right: 0;
+}
+
+/*登录*/
+.login-form{
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+}
+.form-group label span{
+    color: red;
+}
+.bottom-line{
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+}
+.content-p{
+    font-size: 16px;
+    font-weight: 400;
+}
+.comment-header{
+    width: 40px;
+    height: 40px;
+}
+.bottom-margin{
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+}
+.comment-box{
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 0 #fff;
+}
+.comment-name{
+    margin-top: 0px;
+    color: black;
+}
+.comment-content{
+    margin-bottom: 0px;
+}
+.needLogin{
+    letter-spacing:3px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.needLogin p a{
+    color: red;
+}
+/*划过头像显示的个人信息*/
+.avatar{
+    display: block;
+}
+.userInfo-box{
+    position: relative;
+}
+.userInfo-position{
+    position: absolute;
+    display: none;
+}
+.userInfo{
+    position: relative;
+    margin-top: 10px;
+    width: 200px;
+    margin-left: -130px;
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 3px 3px 1px #cccccc;
+    border-radius: 5px;
+    z-index: 100;
+}
+.arrow{
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -13px;
+    right: 26px;
+    border-width:0px 13px 13px 13px;
+    border-style: solid;
+    border-color: #fff #fff rgba(34,36,38,.15) #fff;
+}
+.arrow:after{
+    content: '';
+    display: block;
+    width: 0px;
+    height: 0px;
+    top: 2px;
+    left: -11px;
+    position: absolute;
+    border-width:0px 11px 11px 11px;
+    border-style: solid;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgb(255,255,255) rgba(255,255,255,0);
+}
+.userInfo p{
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 7px 0;
+}
+.self-content{
+    width: 100%;
+    word-break:break-all;
+}
+#dLabel{
+    background-color: white;
+    border: 0;
+    outline: 0;
+}
+#dLabel .caret{
+    width: 10px;
+    height: 10px;
+}
+#edit{
+    border-radius: 5px;
+}
+#edit>li{
+    margin: 5px 0px;
+    cursor: pointer;
+    text-align: center;
+}
+#editBtn{
+    border: none;
+    outline: none;
+    background-color: white;
+}

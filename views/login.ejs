@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+<%- include('head.ejs') %>
+<div class="container">
+    <form class="login-form" action="/login" method="post">
+        <div class="form-group">
+            <label for="username">用户名<span>*</span></label>
+            <input type="text" class="form-control input-lg" id="username" placeholder="用户名" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">密码<span>*</span></label>
+            <input type="password" class="form-control input-lg" id="password" placeholder="密码" name="password" required>
+        </div>
+        <button id="loginSub" type="submit" class="btn btn-success btn-lg">登录</button>
+    </form>
+</div>
+<script src="js/jquery_3.4.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    let loginSub = document.getElementById('loginSub');
+    loginSub.onclick = function () {
+        let username = document.getElementById('username');
+        if (username.validity.valueMissing == true) {
+            username.setCustomValidity('用户名不能为空');
+        } else {
+            username.setCustomValidity('');
+        }
+        let password = document.getElementById('password');
+        if (password.validity.valueMissing == true) {
+            password.setCustomValidity('密码不能为空');
+        } else {
+            password.setCustomValidity('');
+        }
+        // $.ajax({
+        //     url:'/loginJudge',
+        //     method:'POST',
+        //     data:{
+        //         username:username.value,
+        //         password:password.value,
+        //     },
+        //     success:function (res) {
+        //         if(username.validity.valueMissing == true){
+        //             // $('#usernameTip').html('用户已存在');
+        //             username.setCustomValidity('账号不能为空');
+        //         } else if(password.validity.valueMissing == true){
+        //             username.setCustomValidity('密码不能为空');
+        //         } else if(res){
+        //             username.setCustomValidity('账号或密码不正确');
+        //         } else{
+        //             username.setCustomValidity('');
+        //         }
+        //     }
+        // })
+
+
+    }
+</script>
+</body>
+</html>
