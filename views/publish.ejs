@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
 <%- include('head.ejs') %>
@@ -14,11 +14,11 @@
     <div class="media">
         <div class="media-left media-top">
             <a href="#">
-                <img class="media-object" src="img/header/<%- user.header %>">
+                <img class="media-object" src="/img/header/<%- user.header %>">
             </a>
         </div>
         <div class="media-body">
-            <form class="publish-form" action="/publish" method="post">
+            <form class="publish-form" action="/pubContent/publish" method="post">
                 <div class="form-group">
                     <label for="title">标题<span>*</span></label>
                     <input type="text" class="form-control input-lg" id="title" name="title">
@@ -32,7 +32,7 @@
         </div>
     </div>
 </div>
-<script src="js/jquery_3.4.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery_3.4.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

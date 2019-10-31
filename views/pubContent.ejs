@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>pubContent</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
 <%- include('head.ejs') %>
@@ -15,7 +15,7 @@
         <div class="media">
             <div class="media-left media-top userInfo-box">
                 <a href="/?id=<%- article.user_id %>" class="avatar">
-                    <img class="media-object" src="img/header/<%- article.header %>">
+                    <img class="media-object" src="/img/header/<%- article.header %>">
                 </a>
                 <div class="userInfo-position">
                     <div class="userInfo">
@@ -41,7 +41,7 @@
                                 <ul class="dropdown-menu" id="edit">
                                     <li>
                                         <a>
-                                            <form style="display: inline-block" action="/editPage" method="post" id="editArticle">
+                                            <form style="display: inline-block" action="/pubContent/editPage" method="post" id="editArticle">
                                                 <input type="hidden" name="article_id" value="<%- article.article_id %>">
                                                 <button type="submit" id="editBtn">编辑</button>
                                             </form>
@@ -67,7 +67,7 @@
                     <div class="media bottom-margin">
                         <div class="media-left media-top userInfo-box">
                             <a href="/?id=<%- comment[i].user_id %>" class="avatar">
-                                <img class="comment-header" src="img/header/<%- comment[i].header %>">
+                                <img class="comment-header" src="/img/header/<%- comment[i].header %>">
                             </a>
                             <div class="userInfo-position">
                                 <div class="userInfo">
@@ -87,7 +87,7 @@
                     </div>
                     <% } %>
                 <% if(user){ %>
-                <form class="publish-form" action="/comment" method="post">
+                <form class="publish-form" action="/pubContent/comment" method="post">
                     <input type="hidden" id="articleId" name="articleId" value="<%- article.article_id %>">
                     <div class="form-group">
                         <textarea class="form-control" rows="10" name="content" id="content"></textarea>
@@ -114,7 +114,7 @@
             <div class="modal-body">
                 <p>是否确定删除该文章</p>
             </div>
-            <form action="/deleteArticle" method="post">
+            <form action="/pubContent/deleteArticle" method="post">
                 <input type="hidden" name="article_id" id="article_id">
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">确定</button>
@@ -124,9 +124,9 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<script src="js/jquery_3.4.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/blog.js"></script>
+<script src="/js/jquery_3.4.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/blog.js"></script>
 <script>
     $('#myModal').on('show.bs.modal', function (event) {
         console.log(event);

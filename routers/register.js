@@ -3,12 +3,13 @@ const multer = require('multer');
 const crypto = require('crypto');
 const connection = require('./mysqldb');
 const url = require("url");
+const path = require('path');
 //路由对象
 let router = express.Router();
 //上传配置
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, 'public', 'img', 'header'))
+        cb(null, path.join(__dirname,'../', 'public', 'img', 'header'))
     },
     filename: function (req, file, cb) {
         var suffix = file.originalname.split('.')

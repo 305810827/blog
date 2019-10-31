@@ -10,8 +10,8 @@
         <% if(user){ %>
         <li><a href="/?id=<%- user.id %>">个人中心</a></li>
         <li role="separator" class="divider"></li>
-        <li><a href="/publishPage">发表文章</a></li>
-        <li><a href="/logout">退出登录</a></li>
+        <li><a href="/pubContent/publishPage">发表文章</a></li>
+        <li><a href="/loginPage/logout">退出登录</a></li>
         <% } else { %>
         <li><a href="/loginPage">登录</a></li>
         <li><a href="/registerPage">注册</a></li>

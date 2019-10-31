@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
 <%- include('head.ejs') %>
 <div class="container">
-    <form class="login-form" action="/login" method="post">
+    <form class="login-form" action="/loginPage/login" method="post">
         <div class="form-group">
             <label for="username">用户名<span>*</span></label>
             <input type="text" class="form-control input-lg" id="username" placeholder="用户名" name="username" required>
@@ -23,8 +23,8 @@
         <button id="loginSub" type="submit" class="btn btn-success btn-lg">登录</button>
     </form>
 </div>
-<script src="js/jquery_3.4.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery_3.4.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script>
     let loginSub = document.getElementById('loginSub');
     loginSub.onclick = function () {

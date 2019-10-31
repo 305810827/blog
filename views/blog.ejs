@@ -18,7 +18,7 @@
                 <div class="media">
                     <div class="media-left media-top userInfo-box">
                         <a href="/?id=<%- article[i].user_id %>" class="avatar">
-                            <img class="media-object" src="img/header/<%- article[i].header %>">
+                            <img class="media-object" src="/img/header/<%- article[i].header %>">
                         </a>
                         <div class="userInfo-position">
                             <div class="userInfo">
@@ -45,7 +45,7 @@
                                     <ul class="dropdown-menu" id="edit">
                                         <li>
                                             <a>
-                                                <form style="display: inline-block" action="/editPage" method="post" id="editArticle">
+                                                <form style="display: inline-block" action="/pubContent/editPage" method="post" id="editArticle">
                                                     <input type="hidden" name="article_id" value="<%- article[i].article_id %>">
                                                     <button type="submit" id="editBtn">编辑</button>
                                                 </form>
@@ -77,7 +77,7 @@
             <div class="modal-body">
                 <p>是否确定删除该文章</p>
             </div>
-            <form action="/deleteArticle" method="post">
+            <form action="/pubContent/deleteArticle" method="post">
                 <input type="hidden" name="article_id" id="article_id">
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">确定</button>

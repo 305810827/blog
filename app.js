@@ -4,9 +4,6 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const router = require('./routers');
 
-const url = require("url");
-
-
 //创建服务应用
 let app = express();
 //ejs模板引擎配置

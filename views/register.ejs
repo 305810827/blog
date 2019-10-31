@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
 <%- include('head.ejs') %>
 <div class="container">
-    <form class="login-form" id="registerForm" name="registerForm" action="/register" method="post"
+    <form class="login-form" id="registerForm" name="registerForm" action="/registerPage/register" method="post"
           enctype="multipart/form-data">
         <div class="form-group">
             <label for="username">用户名<span>*</span></label>
@@ -50,15 +50,15 @@
     </form>
 </div>
 
-<script src="js/jquery_3.4.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/jquery_3.4.1.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 
     let registerSub = document.getElementById('registerSub');
     registerSub.onclick = function () {
         let username = document.getElementById('username');
         $.ajax({
-            url:'/usernameJudge',
+            url:'/registerPage/usernameJudge',
             method:'GET',
             data:{
                 username:$('#username').val()
